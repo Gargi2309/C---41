@@ -132,6 +132,8 @@ class Game {
       image(track, 0, -height * 5, width, height * 6);
 
       this.showLeaderboard();
+      this.showFuelBar();
+      this.showLife();
 
       //index of the array
       var index = 0;
@@ -323,7 +325,7 @@ class Game {
 
   showLife (){
     push();
-    image(life,width/2 - 130,height - player.positionY - 50,20,20)
+    image(lifeImage,width/2 - 130,height - player.positionY - 50,20,20)
     fill("white");
     rect(width/2 - 100,height - player.positionY - 50,185,20);
     fill("blue");
@@ -332,7 +334,18 @@ class Game {
     pop();
   }
 
+  showFuelBar(){
+    push();
+    image(fuelImage,width/2-120,height-player.positionY - 350,20,20);
+    fill("white");
+    rect(width/2 - 90,height - player.positionY - 350,185,20);
+    fill("red");
+    rect(width/2 - 90,height - player.positionY - 350,player.fuel,20);
+    noStroke();
 
+    pop();
+
+  }
 
 
 
